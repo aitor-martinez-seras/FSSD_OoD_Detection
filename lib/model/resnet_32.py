@@ -138,7 +138,7 @@ def test(net):
 if load_pretrained == True: 
   model = resnet32()
   model.cuda()
-  model.load_state_dict(torch.load('/content/pre_trained/ResNet32_pytorch_compatible.th'))
+  model.load_state_dict(torch.load('/content/pre_trained/ResNet32_pytorch_compatible.bin'))
 
 if __name__ == "__main__":
     for net_name in __all__:
