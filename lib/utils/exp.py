@@ -22,6 +22,7 @@ key2model_path = {
     "cifar10_resnet": "pre_trained/resnet_cifar10.pth",
     "fmnist_lenet_oe"       : "pre_trained/lenet_fmnist_oe.pth",
     "cifar10_resnet_oe"     : "pre_trained/resnet_cifar10_oe.pth",
+    "cifar10_resnet32": "pre_trained/resnet32_pytorch.pth"
 }
 
 
@@ -29,6 +30,7 @@ key2model_path = {
 key2model_arch = {
     "cifar10_resnet": resnet.ResNet34(num_c=10),
     "fmnist_lenet": lenet.LeNet(),
+    "cifar10_resnet32": resnet32_v1.ResNet34(num_c=10)
 }
 
 def get_modeldir_ens(ind, model_arch):
