@@ -11,7 +11,7 @@ from torchvision import transforms
 from loguru import logger
 import torchvision.models as models
 from lib.model.resnet_imagenet import resnet34
-from lib.model import resnet, lenet
+from lib.model import resnet, lenet, resnet_32v1
 from lib.model import resnet_imagenet
 from lib.dataLoader import getTargetDataSet 
 import random
