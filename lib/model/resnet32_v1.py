@@ -190,7 +190,7 @@ class ResNet(nn.Module):
         out_list.append(out.contiguous().view(out.size(0), -1))
         #out = self.layer4(out)
         #out_list.append(out.contiguous().view(out.size(0), -1))
-        out = F.avg_pool2d(out, 4)
+        out = F.avg_pool2d(out, out.size()[3])
         out = out.view(out.size(0), -1)
         y = self.linear(out)
         return y, out_list
@@ -207,7 +207,7 @@ class ResNet(nn.Module):
         out_list.append(out)
         #out = self.layer4(out)
         #out_list.append(out)
-        out = F.avg_pool2d(out, 4)
+        out = F.avg_pool2d(out, out.size()[3])
         out = out.view(out.size(0), -1)
         y = self.linear(out)
         return y, out_list
@@ -238,8 +238,9 @@ class ResNet(nn.Module):
         out = self.layer2(out)
         penultimate = self.layer3(out)
         #out = self.layer3(out)
-        #penultimate = self.layer4(out)
-        out = F.avg_pool2d(penultimate, 4)
+        #penultimate = self.layer4(out)ç
+        out = F.avg_pool2d(penultimate, out.size()[3])
+        #out = F.avg_pool2d(penultimate, 4)
         out = out.view(out.size(0), -1)
         y = self.linear(out)
         return y, penultimate
